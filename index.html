@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ua">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Семінар 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <main class="main">
+        <section class="hero">
+          <div class="hero__container container__center">
+            <h1
+              class="hero__title text--monospace text--uppercase title--big title--center viewport animation-fast"
+            >
+              Організаційні засоби
+              <span class="color--primary">безпеки</span> та їх
+              <span class="color--primary">роль</span> у комплексному захисті
+            </h1>
+          </div>
+        </section>
+        <section class="security">
+          <div class="security__container">
+            <h2
+              class="security__title text--monospace text--uppercase title--bigger title--center viewport animation-fast"
+            >
+              Організаційні засоби безпеки
+            </h2>
+
+            <div class="security__wrapper">
+              <h2 class="security__sub-title viewport animation-medium">
+                <span class="color--primary">Організаційні засоби безпеки</span>
+                - це сукупність заходів, правил, процедур та політик, які
+                спрямовані на забезпечення безпечної діяльності організації,
+                захист інформації, ресурсів та персоналу від загроз.
+              </h2>
+              <div
+                class="security__column column-security viewport animation-long"
+              >
+                <h3
+                  class="column-security__title text--monospace text--uppercase sub-title"
+                >
+                  Основні аспекти:
+                </h3>
+                <ul class="column-security__list">
+                  <li class="column-security__item">
+                    Політики безпеки: Документовані вказівки та правила, які
+                    визначають стандарти безпеки для персоналу та процесів.
+                  </li>
+                  <li class="column-security__item">
+                    Тренінг і освіта: Навчання персоналу щодо безпеки, включаючи
+                    усвідомлення загроз і методи їх запобігання.
+                  </li>
+                  <li class="column-security__item">
+                    Керівництво та відповідальність: Чітке розподілення
+                    обов'язків і відповідальності за реалізацію стратегій
+                    безпеки.
+                  </li>
+                  <li class="column-security__item">
+                    Аудит і контроль: Систематична перевірка та оцінка
+                    ефективності заходів безпеки.
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="security__column column-security viewport animation-longer"
+              >
+                <h3
+                  class="column-security__title text--monospace text--uppercase sub-title"
+                >
+                  Роль у комплексному захисті:
+                </h3>
+                <ul class="column-security__list">
+                  <li class="column-security__item">
+                    Інтеграція з технічними заходами: Організаційні засоби
+                    доповнюють технічні засоби захисту, забезпечуючи повністю
+                    охоплюючий захист інформаційних ресурсів.
+                  </li>
+                  <li class="column-security__item">
+                    Адаптація до змін: Гнучкість і можливість адаптації політик
+                    та процедур до нових загроз і викликів.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="consulations">
+          <div class="consulations__container">
+            <h2
+              class="consulations__title text--monospace text--uppercase title--bigger title--center viewport animation-fast"
+            >
+              Висновки
+            </h2>
+            <div class="consulations__text viewport animation-medium">
+            Організаційні засоби безпеки є невід'ємною частиною комплексної стратегії захисту інформаційних та фізичних ресурсів організації бо вони доповнюють технічні засоби, створюючи багатоаспектний захист.
+            </div>
+          </div>
+        </section>
+        <section class="thanks">
+          <div class="thanks__container container__center">
+            <h2
+              class="thanks__title text--monospace text--uppercase title--big title--center viewport animation-fast"
+            >
+              Дякую за увагу
+            </h2>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      });
+
+      window.addAndObserveElement = (newElement) => {
+        document.body.appendChild(newElement);
+        observer.observe(newElement);
+      };
+
+      const hiddenElements = document.querySelectorAll(".viewport");
+      hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

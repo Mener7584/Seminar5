@@ -1,0 +1,239 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+:root {
+  --surface: #101418;
+  --surface-custom: #040506;
+  --on-surface: #e0e2e8;
+  --on-surface-variant: #c2c7cf;
+  --primary: #9bcbfa;
+  --on-primary: #003353;
+  --outline: #8c9198;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background-color: var(--surface-custom);
+  color: var(--on-surface);
+  line-height: 1.5;
+  font-size: 19px;
+}
+::selection {
+  background-color: var(--on-surface);
+  color: var(--surface);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+[class*="__container"] {
+  margin: 0 auto;
+  padding-inline: 10px;
+  padding-block: 40px;
+  height: 100dvh;
+  scroll-snap-align: start;
+  overflow: scroll;
+  max-width: 1400px;
+}
+
+.main {
+  flex-grow: 1;
+  height: 100dvh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+svg {
+  height: auto;
+  max-width: 100%;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  object-fit: cover;
+  align-items: center;
+  font-family: monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  background-color: transparent;
+  color: inherit;
+}
+
+button,
+input[type="button"],
+input[type="checkbox"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled {
+  cursor: default;
+}
+
+.color--primary {
+  color: var(--primary);
+}
+.color--secondary {
+  color: var(--secondary);
+}
+.color--primary::selection {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+.text--monospace {
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.container__center {
+  display: grid;
+  place-content: center;
+}
+
+.sub-title {
+  font-size: 18px;
+}
+.title--bigger {
+  font-size: 28px;
+}
+.title--big {
+  font-size: 34px;
+}
+.title--center {
+  text-align: center;
+}
+
+.viewport {
+  opacity: 0;
+  transform: translateY(15px);
+}
+.viewport.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animation-fast {
+  transition: 0.5s ease-out;
+}
+.animation-medium {
+  transition: 0.65s ease-out;
+}
+.animation-long {
+  transition: 0.8s ease-out;
+}
+.animation-longer {
+  transition: 0.95s ease-out;
+}
+
+.thanks__container {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background: no-repeat url(./Sea.jpg) center / cover;
+  }
+}
+
+.security__container,
+.consulations__container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.security__sub-title {
+  position: relative;
+  padding-inline-start: 10px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    left: 0;
+    border-radius: 2px;
+    background-color: var(--primary);
+  }
+}
+.security__sub-title:not(:last-child) {
+  margin-block-end: 10px;
+}
+
+.security__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.security__column {
+  background-color: var(--surface);
+  border: 2px solid var(--outline);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.column-security__title {
+  color: var(--on-surface-variant);
+}
+
+.column-security__item {
+  list-style: num;
+  margin-inline-start: 22px;
+}
